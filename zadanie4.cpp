@@ -1,13 +1,30 @@
+
 #include <iostream>
 #include <string>
-using namespace std;
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char** argv)
- {
- 	string a,b,c,d,e,f;
- 	cout<<"podaj 5 imion"<<endl;
- 	cin>>a>>b>>c>>d>>e>>f;
- 	if(a)
-	return 0;
+int main(){
+    int m=0,z=0,x;
+    std::string me,ze;
+    std::string im[5];
+    for(int i=0; i<5;i++)
+    std::cin>>im[i];
+    
+    for(int i=0;i<5;i++)
+    {
+        x=im[i].size();
+        if(im[i][x-1]=='a')
+        {
+            z+=1;
+            ze+=im[i]+" ";
+        }
+        else
+        {
+            m+=1;
+            me+=im[i]+" ";
+        }
+    }
+    std::cout<<"Imiona męskie: "<<me<<" "<<m<<"\n";
+    std::cout<<"Imiona żeńskie: "<<ze<<" "<<z<<"\n";
+    return 0;
 }
+
