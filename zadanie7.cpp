@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
-int count_chars(string x, char y){
+int count_chars(std::string x, char y){
     int suma=0;
     for(int i=0; i<x.size(); i++)
     {
@@ -17,13 +15,13 @@ int count_chars(string x, char y){
 
 int main(){
     int ilosc=0;
-    string wyraz;
+    std::string wyraz;
     char znak;
-    cout<<"Podaj wyraz: "<<endl;
-    cin>>wyraz;
-    cout<<"Podaj szukany znak: "<<endl;
-    cin>>znak;
+    std::cout<<"Podaj wyraz: \n";
+    std::cin>>wyraz;
+    std::cout<<"Podaj szukany znak: \n";
+    std::cin>>znak;
     ilosc=count_chars(wyraz,znak);
-    cout<<"liczba wystapien znaku w przekazanym przez argument wyrazu: "<<ilosc<<endl;
+    std::cout<<"Ilość znaków w wyrazie jest równa: "<<ilosc<<"\n";
     return 0;
 }
