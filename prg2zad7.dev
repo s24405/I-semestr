@@ -1,62 +1,76 @@
-[Project]
-FileName=prg2zad7.dev
-Name=prg2zad7
-Type=1
-Ver=2
-ObjFiles=
-Includes=
-Libs=
-PrivateResource=
-ResourceIncludes=
-MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=
-IsCpp=1
-Icon=
-ExeOutput=
-ObjectOutput=
-LogOutput=
-LogOutputEnabled=0
-OverrideOutput=0
-OverrideOutputName=
-HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
-CommandLine=
-Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
-CompilerSet=0
-CompilerSettings=0000000000000000000000000
-UnitCount=1
+#include <iostream>
+#include <vector>
+#include <string>
 
-[VersionInfo]
-Major=1
-Minor=0
-Release=0
-Build=0
-LanguageID=1033
-CharsetID=1252
-CompanyName=
-FileVersion=
-FileDescription=Developed using the Dev-C++ IDE
-InternalName=
-LegalCopyright=
-LegalTrademarks=
-OriginalFilename=
-ProductName=
-ProductVersion=
-AutoIncBuildNr=0
-SyncProduct=1
+struct Student{
 
-[Unit1]
-FileName=prgzad7.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
+    std::string name;
+    std::string surname;
+    std::vector<double> grades;
 
+};
+
+struct Group{
+    std::string tag;
+    std::vector<Student> studs;
+}; 
+
+void add_to_group(Group& group, Student& stud){
+    group.studs.push_back(stud);   
+}
+
+
+int main(){
+    #include <iostream>
+#include <vector>
+#include <string>
+
+struct Student{
+
+    std::string name;
+    std::string surname;
+    std::vector<double> grades;
+
+};
+
+struct Group{
+    std::string tag;
+    std::vector<Student> studs;
+}; 
+
+void add_to_group(Group& group, Student& stud){
+    group.studs.push_back(stud);   
+}
+
+
+int main(){
+   auto s1 = Student{ " Kinga " , " Kolowska " , { 6 , 5 , 2 , 2 , 1 , 4 , 1 }};
+    auto s2 = Student{ " Marta " , " Bielik " ,{ 2 , 6 , 5.5 , 1 , 1 , 2 }};
+    auto s3 = Student{ " Iza " , " Kiedrowska " , { 5 , 6 , 6 , 6 , 3 , 1.5 , 2.5 } } ;
+    auto s4 = Student{ " Kuba " , " Hinc " ,{ 1 , 2 , 2 , 1 , 1 , 5.5 , 5.5 }};
+    
+    auto group = Group{"group", {s1}};
+    add_to_group(group, s2);
+    add_to_group(group, s3);
+    add_to_group(group, s4);
+    
+    std::cout<<"Students in group: ";
+    for(auto i : group.studs){
+        std::cout<<i.name<<" "<<i.surname<<", ";
+    }
+    std::cout<<"\n";
+    return 0;
+}
+    
+    auto group = Group{"group", {s1}};
+    add_to_group(group, s2);
+    add_to_group(group, s3);
+    add_to_group(group, s4);
+    
+    std::cout<<"Students in group: ";
+    for(auto i : group.studs){
+        std::cout<<i.name<<" "<<i.surname<<", ";
+    }
+    std::cout<<"\n";
+    return 0;
+}
