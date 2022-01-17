@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 bool is_even(int x){
     if(x%2==0)
         return true;
@@ -10,13 +8,9 @@ bool is_even(int x){
 }
 int main(){
     int x;
-    cout<<"Podaj liczbe: ";
-    cin>>x;
-    
-    if(is_even(x)) 
-	cout<<"Parzysta "<<endl;
-    
-    else cout<<"Nieparzysta"<<endl;
+    std::cout<<"Podaj liczbe do sprawdzenia: ";
+    std::cin>>x;
+    if(is_even(x)) std::cout<<"Parzysta\n";
+    else std::cout<<"Nieparzysta\n";
     return 0;
 }
-
